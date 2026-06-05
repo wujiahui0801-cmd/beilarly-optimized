@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>湛江雷州零点酒吧 — 贝拉利音响</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+.case-hero-full {
+  position: relative; height: 70vh; min-height: 500px;
+  overflow: hidden;
+}
+.case-hero-full img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.case-hero-full .overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(0deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.3) 50%, transparent 100%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 60px;
+}
+.case-hero-full .tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 12px;
+}
+.case-hero-full h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; margin-bottom: 12px; }
+.case-hero-full p { font-size: 1rem; color: var(--grey); max-width: 600px; }
+.case-meta {
+  display: flex; gap: 40px; padding: 40px 0;
+  border-bottom: 1px solid rgba(200,169,110,0.1);
+}
+.case-meta-item .label {
+  font-size: 0.7rem; color: var(--grey);
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px;
+}
+.case-meta-item .value {
+  font-size: 1rem; font-weight: 600;
+}
+.case-content { max-width: 860px; margin: 0 auto; padding: 60px 0; }
+.case-content h2 {
+  font-size: 1.6rem; font-weight: 700;
+  margin: 40px 0 16px;
+  padding-left: 16px;
+  border-left: 3px solid var(--gold);
+}
+.case-content h2:first-child { margin-top: 0; }
+.case-content p {
+  font-size: 1rem; color: rgba(245,240,235,0.8);
+  line-height: 2; margin-bottom: 20px;
+}
+.case-content img {
+  width: 100%; margin: 24px 0;
+}
+.case-content .img-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0;
+}
+.case-content .img-row img { margin: 0; }
+.equip-table {
+  width: 100%; border-collapse: collapse; margin: 24px 0;
+}
+.equip-table th, .equip-table td {
+  padding: 14px 20px; text-align: left;
+  border-bottom: 1px solid rgba(200,169,110,0.1);
+  font-size: 0.9rem;
+}
+.equip-table th {
+  color: var(--gold); font-size: 0.75rem;
+  letter-spacing: 2px; text-transform: uppercase;
+  background: var(--dark2);
+}
+.case-nav {
+  display: flex; justify-content: space-between;
+  padding: 40px 0; border-top: 1px solid rgba(200,169,110,0.1);
+}
+.case-nav a {
+  display: flex; align-items: center; gap: 12px;
+  color: var(--grey); font-size: 0.9rem;
+}
+.case-nav a:hover { color: var(--gold); }
+@media (max-width: 768px) {
+  .case-hero-full .overlay { padding: 30px; }
+  .case-meta { flex-wrap: wrap; gap: 20px; }
+  .case-content .img-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://beilarly.com/views/beilarly/im/logo2.png" alt="贝拉利"> BEILARLY
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="products.html">产品</a></li>
+      <li><a href="cases.html" class="active">工程案例</a></li>
+      <li><a href="solutions.html">解决方案</a></li>
+      <li><a href="about.html">关于我们</a></li>
+      <li><a href="contact.html">联系</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">获取方案</a>
+    <div class="nav-mobile" id="navMobile"><i class="fas fa-bars"></i></div>
+  </div>
+</nav>
+
+<section class="case-hero-full">
+  <img src="https://beilarly.com/uploadfiles/image/202403/35.jpg" alt="湛江雷州零点酒吧">
+  <div class="overlay">
+    <div class="tag">酒吧娱乐工程</div>
+    <h1>湛江雷州零点酒吧</h1>
+    <p>贝拉利线阵系统打造沉浸式酒吧娱乐体验</p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="case-meta">
+    <div class="case-meta-item">
+      <div class="label">项目类型</div>
+      <div class="value">酒吧娱乐</div>
+    </div>
+    <div class="case-meta-item">
+      <div class="label">项目面积</div>
+      <div class="value">800㎡</div>
+    </div>
+    <div class="case-meta-item">
+      <div class="label">项目地点</div>
+      <div class="value">广东省湛江市雷州</div>
+    </div>
+    <div class="case-meta-item">
+      <div class="label">使用产品</div>
+      <div class="value">Q7线阵 + EV超低音</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="case-content">
+    <h2>项目背景</h2>
+    <p>湛江雷州零点酒吧是当地知名的大型娱乐酒吧，总面积约800㎡，分为大厅区和VIP包房区。业主希望打造一个声压级充足、低频震撼、覆盖均匀的专业酒吧扩声系统。</p>
+
+    <h2>解决方案</h2>
+    <p>贝拉利工程师团队在实地勘测后，根据场地的建筑结构和声学特性，为客户量身定制了以Q7有源线阵为主扩、EV系列超低音为低频补充的完整扩声方案。</p>
+
+    <img src="https://beilarly.com/uploadfiles/image/202403/32.jpg" alt="现场施工">
+
+    <h2>设备清单</h2>
+    <table class="equip-table">
+      <tr><th>设备</th><th>型号</th><th>数量</th></tr>
+      <tr><td>主扩线阵</td><td>Q7 有源线阵</td><td>8只</td></tr>
+      <tr><td>超低音</td><td>EV系列双18寸超低</td><td>4只</td></tr>
+      <tr><td>补声</td><td>KK1012 全频音箱</td><td>6只</td></tr>
+      <tr><td>功放</td><td>LA系列功率放大器</td><td>4台</td></tr>
+      <tr><td>处理器</td><td>数字效果处理器</td><td>2台</td></tr>
+    </table>
+
+    <h2>项目效果</h2>
+    <p>系统调试完成后，全场声压级均匀覆盖，低频下潜深沉有力，高频清晰不刺耳。业主对最终效果非常满意，开业后迅速成为当地最热门的酒吧之一。</p>
+
+    <div class="img-row">
+      <img src="https://beilarly.com/uploadfiles/image/201908/113.jpg" alt="设备安装">
+      <img src="https://beilarly.com/uploadfiles/image/201904/564.png" alt="系统调试">
+    </div>
+
+    <div class="case-nav">
+      <a href="cases.html"><i class="fas fa-arrow-left"></i> 返回案例列表</a>
+      <a href="case-detail.html">下一个案例 <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="font-size:1.2rem;">
+          <img src="https://beilarly.com/views/beilarly/im/logo2.png" alt="贝拉利" style="height:28px;"> BEILARLY
+        </a>
+        <p>佛山市贝拉利音响设备科技有限公司，集生产与工程服务为一体的专业音响品牌厂家。</p>
+      </div>
+      <div><h4>产品系列</h4><ul>
+        <li><a href="products.html">线阵系统音响</a></li>
+        <li><a href="products.html">全频系统音响</a></li>
+        <li><a href="products.html">超低音响系列</a></li>
+      </ul></div>
+      <div><h4>工程案例</h4><ul>
+        <li><a href="cases.html">酒吧娱乐工程</a></li>
+        <li><a href="cases.html">KTV 娱乐工程</a></li>
+        <li><a href="cases.html">酒店宴会厅工程</a></li>
+      </ul></div>
+      <div><h4>关于贝拉利</h4><ul>
+        <li><a href="about.html">公司介绍</a></li>
+        <li><a href="contact.html">联系我们</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 佛山市贝拉利音响设备科技有限公司</span>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-weixin"></i></a>
+        <a href="#"><i class="fab fa-weibo"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="common.js"></script>
+</body>
+</html>
