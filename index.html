@@ -1052,108 +1052,19 @@ img { max-width: 100%; display: block; }
   </div>
 </footer>
 
+<script src="common.js"></script>
+<script src="editor.js"></script>
 <script>
-// ===== LOADER =====
+// Loader
 window.addEventListener('load', () => {
   setTimeout(() => document.getElementById('loader').classList.add('done'), 800);
 });
-
-// ===== NAV SCROLL =====
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 80);
-});
-
-// ===== CURSOR GLOW =====
-const glow = document.getElementById('cursorGlow');
-if (window.innerWidth > 768) {
-  document.addEventListener('mousemove', (e) => {
-    glow.style.left = e.clientX + 'px';
-    glow.style.top = e.clientY + 'px';
-  });
-} else {
-  glow.style.display = 'none';
-}
-
-// ===== REVEAL ON SCROLL =====
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
-reveals.forEach(el => observer.observe(el));
-
-// ===== NUMBER COUNTER =====
-const counters = document.querySelectorAll('[data-count]');
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const el = entry.target;
-      const target = parseInt(el.dataset.count);
-      const suffix = el.querySelector('span') ? el.querySelector('span').outerHTML : '';
-      let current = 0;
-      const step = target / 60;
-      const timer = setInterval(() => {
-        current += step;
-        if (current >= target) {
-          current = target;
-          clearInterval(timer);
-        }
-        el.innerHTML = Math.floor(current).toLocaleString() + suffix;
-      }, 25);
-      counterObserver.unobserve(el);
-    }
-  });
-}, { threshold: 0.5 });
-counters.forEach(el => counterObserver.observe(el));
-
-// ===== SMOOTH SCROLL =====
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', (e) => {
-    e.preventDefault();
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
-
-// ===== MOBILE NAV (basic toggle) =====
-const navMobile = document.getElementById('navMobile');
-const navLinks = document.querySelector('.nav-links');
-navMobile.addEventListener('click', () => {
-  if (navLinks.style.display === 'flex') {
-    navLinks.style.display = 'none';
-  } else {
-    navLinks.style.display = 'flex';
-    navLinks.style.flexDirection = 'column';
-    navLinks.style.position = 'absolute';
-    navLinks.style.top = '100%';
-    navLinks.style.left = '0';
-    navLinks.style.width = '100%';
-    navLinks.style.background = 'rgba(10,10,10,0.98)';
-    navLinks.style.padding = '20px';
-    navLinks.style.gap = '16px';
-  }
-});
-
-// ===== PARALLAX HERO =====
+// Parallax hero
 window.addEventListener('scroll', () => {
   const hero = document.querySelector('.hero-bg');
-  if (hero) {
-    const scrolled = window.scrollY;
-    // 保留 CSS 的 scale 基准，只叠加 translateY
-    hero.style.transform = `scale(1.1) translateY(${scrolled * 0.25}px)`;
-  }
-  // Hero 淡出效果
+  if (hero) hero.style.transform = 'scale(1.1) translateY(' + (window.scrollY * 0.25) + 'px)';
   const heroContent = document.querySelector('.hero-content');
-  if (heroContent && window.scrollY < 800) {
-    heroContent.style.opacity = 1 - window.scrollY / 600;
-  }
+  if (heroContent && window.scrollY < 800) heroContent.style.opacity = 1 - window.scrollY / 600;
 });
 </script>
 </body>
