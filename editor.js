@@ -507,7 +507,8 @@
   function isEditorEl(el) {
     return el.closest('.bly-panel') || el.closest('.bly-trigger') ||
            el.closest('.bly-quick-bar') || el.closest('.bly-toast') ||
-           el.closest('.bly-tip') || el.closest('.bly-guide-overlay');
+           el.closest('.bly-tip') || el.closest('.bly-guide-overlay') ||
+           el.closest('.bly-layer-picker');
   }
   function rgbToHex(rgb) {
     if (!rgb || rgb === 'transparent' || rgb === 'rgba(0, 0, 0, 0)') return '#000000';
@@ -598,10 +599,15 @@
     picker.innerHTML = html;
     document.body.appendChild(picker);
 
-    // Bind clicks
+    // Stop ALL clicks inside picker from reaching main handler (which uses capture)
+    picker.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      ev.stopImmediatePropagation();
+    }, true); // capture phase
+
+    // Bind item clicks
     picker.querySelectorAll('.bly-layer-item').forEach(item => {
       item.addEventListener('click', (ev) => {
-        ev.stopPropagation();
         const idx = parseInt(item.dataset.idx);
         const target = els[idx];
         picker.remove();
