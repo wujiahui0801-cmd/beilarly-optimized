@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关于我们 — 贝拉利音响</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+.about-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.about-split.reverse { direction: rtl; }
+.about-split.reverse > * { direction: ltr; }
+.about-img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.about-img-grid .main { grid-column: span 2; height: 300px; overflow: hidden; }
+.about-img-grid .main img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.about-img-grid .main:hover img { transform: scale(1.04); }
+.about-img-grid .sub { height: 200px; overflow: hidden; }
+.about-img-grid .sub img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.about-img-grid .sub:hover img { transform: scale(1.04); }
+.timeline { position: relative; padding-left: 40px; }
+.timeline::before {
+  content: ''; position: absolute; left: 0; top: 0;
+  width: 2px; height: 100%;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+}
+.tl-item { position: relative; padding-bottom: 40px; }
+.tl-item::before {
+  content: ''; position: absolute; left: -44px; top: 6px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--gold); border: 2px solid var(--black);
+}
+.tl-year {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem; letter-spacing: 2px; color: var(--gold);
+  margin-bottom: 8px;
+}
+.tl-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
+.tl-desc { font-size: 0.85rem; color: var(--grey); line-height: 1.7; }
+.cert-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.cert-item {
+  background: var(--dark2); padding: 30px; text-align: center;
+  border: 1px solid rgba(200,169,110,0.06);
+  transition: all 0.3s ease;
+}
+.cert-item:hover { border-color: rgba(200,169,110,0.2); transform: translateY(-3px); }
+.cert-item i { font-size: 2rem; color: var(--gold); margin-bottom: 14px; display: block; }
+.cert-item h4 { font-size: 0.9rem; margin-bottom: 6px; }
+.cert-item p { font-size: 0.75rem; color: var(--grey); }
+@media (max-width: 768px) {
+  .about-split, .about-split.reverse { grid-template-columns: 1fr; gap: 40px; direction: ltr; }
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://beilarly.com/views/beilarly/im/logo2.png" alt="贝拉利"> BEILARLY
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="products.html">产品</a></li>
+      <li><a href="cases.html">工程案例</a></li>
+      <li><a href="solutions.html">解决方案</a></li>
+      <li><a href="about.html" class="active">关于我们</a></li>
+      <li><a href="contact.html">联系</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">获取方案</a>
+    <div class="nav-mobile" id="navMobile"><i class="fas fa-bars"></i></div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="hero-bg" style="background-image:url('https://beilarly.com/views/beilarly/im/zb1.jpg')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="page-label">ABOUT US</div>
+    <h1 class="page-title">关于贝拉利</h1>
+    <p class="page-sub">30年舞台音响品牌，用专业打动客户</p>
+  </div>
+</section>
+
+<!-- 品牌介绍 -->
+<section class="section">
+  <div class="container">
+    <div class="about-split reveal">
+      <div class="about-img-grid">
+        <div class="main"><img src="https://beilarly.com/views/beilarly/im/zb1.jpg" alt="贝拉利工厂"></div>
+        <div class="sub"><img src="https://beilarly.com/views/beilarly/im/zb2.jpg" alt="贝拉利服务"></div>
+        <div class="sub"><img src="https://beilarly.com/views/beilarly/im/zb3.jpg" alt="贝拉利展会"></div>
+      </div>
+      <div>
+        <div class="section-label">BEILARLY STORY</div>
+        <h2 class="section-title">香港贝拉利<br>30年舞台音响品牌</h2>
+        <p class="section-desc" style="margin-bottom:24px;">
+          佛山市贝拉利音响设备科技有限公司，前身成立于1997年，是香港贝拉利专业音响有限公司在中国大陆投资创立的生产基地。注册资本600万元，现有厂房20,000多平米，拥有300多名经验丰富的生产制造员工和专业调音师团队。
+        </p>
+        <p class="section-desc" style="margin-bottom:30px;">
+          集自主研发、生产制造、工程服务为一体，产品畅销海外50+国家。美国、日本、欧洲均享有较高美誉度。
+        </p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <i class="fas fa-check-circle" style="color:var(--gold);"></i>
+            <span style="font-size:0.85rem;">ISO9001 认证</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <i class="fas fa-check-circle" style="color:var(--gold);"></i>
+            <span style="font-size:0.85rem;">CE / RoHS</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <i class="fas fa-check-circle" style="color:var(--gold);"></i>
+            <span style="font-size:0.85rem;">壹级施工资质</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <i class="fas fa-check-circle" style="color:var(--gold);"></i>
+            <span style="font-size:0.85rem;">终身维护</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 发展历程 -->
+<section class="section" style="background:var(--dark);">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;">
+      <div class="section-label" style="text-align:center;">HISTORY</div>
+      <h2 class="section-title" style="text-align:center;">发展历程</h2>
+    </div>
+    <div style="max-width:700px;margin:0 auto;">
+      <div class="timeline">
+        <div class="tl-item reveal"><div class="tl-year">1997</div><div class="tl-title">创立之初</div><div class="tl-desc">佛山市南海韵沁音响设备厂成立，开启专业音响制造之路</div></div>
+        <div class="tl-item reveal"><div class="tl-year">2005</div><div class="tl-title">品牌升级</div><div class="tl-desc">香港贝拉利专业音响有限公司成立，注册"贝拉利"品牌</div></div>
+        <div class="tl-item reveal"><div class="tl-year">2010</div><div class="tl-title">产能扩张</div><div class="tl-desc">佛山新工厂投产，厂房面积扩展至20,000平米</div></div>
+        <div class="tl-item reveal"><div class="tl-year">2015</div><div class="tl-title">行业认可</div><div class="tl-desc">荣获"中国音响灯光行业十大品牌"及"年度新锐专业音响品牌"</div></div>
+        <div class="tl-item reveal"><div class="tl-year">2020</div><div class="tl-title">全球化布局</div><div class="tl-desc">产品出口50+国家，建立全球化品牌战略</div></div>
+        <div class="tl-item reveal"><div class="tl-year">2024</div><div class="tl-title">持续创新</div><div class="tl-desc">30年品牌沉淀，80,000+工程案例，持续引领行业发展</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 荣誉资质 -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;">
+      <div class="section-label" style="text-align:center;">CERTIFICATIONS</div>
+      <h2 class="section-title" style="text-align:center;">荣誉资质</h2>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-item reveal"><i class="fas fa-award"></i><h4>十大品牌</h4><p>中国音响灯光行业十大品牌</p></div>
+      <div class="cert-item reveal reveal-delay-1"><i class="fas fa-certificate"></i><h4>ISO9001</h4><p>国际质量管理体系认证</p></div>
+      <div class="cert-item reveal reveal-delay-2"><i class="fas fa-shield-alt"></i><h4>CE 认证</h4><p>欧盟安全认证</p></div>
+      <div class="cert-item reveal reveal-delay-3"><i class="fas fa-leaf"></i><h4>RoHS</h4><p>欧盟环保指令认证</p></div>
+      <div class="cert-item reveal"><i class="fas fa-hard-hat"></i><h4>壹级资质</h4><p>音响灯光工程施工壹级</p></div>
+      <div class="cert-item reveal reveal-delay-1"><i class="fas fa-star"></i><h4>新锐品牌</h4><p>2015年度新锐专业音响品牌</p></div>
+      <div class="cert-item reveal reveal-delay-2"><i class="fas fa-globe"></i><h4>出口认证</h4><p>产品畅销海外50+国家</p></div>
+      <div class="cert-item reveal reveal-delay-3"><i class="fas fa-tools"></i><h4>研发实力</h4><p>专业研发部门与试验设备</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="font-size:1.2rem;">
+          <img src="https://beilarly.com/views/beilarly/im/logo2.png" alt="贝拉利" style="height:28px;"> BEILARLY
+        </a>
+        <p>佛山市贝拉利音响设备科技有限公司，集生产与工程服务为一体的专业音响品牌厂家。</p>
+      </div>
+      <div><h4>产品系列</h4><ul>
+        <li><a href="products.html">线阵系统音响</a></li>
+        <li><a href="products.html">全频系统音响</a></li>
+        <li><a href="products.html">超低音响系列</a></li>
+      </ul></div>
+      <div><h4>工程案例</h4><ul>
+        <li><a href="cases.html">酒吧娱乐工程</a></li>
+        <li><a href="cases.html">KTV 娱乐工程</a></li>
+        <li><a href="cases.html">酒店宴会厅工程</a></li>
+      </ul></div>
+      <div><h4>关于贝拉利</h4><ul>
+        <li><a href="about.html">公司介绍</a></li>
+        <li><a href="about.html">发展历程</a></li>
+        <li><a href="contact.html">联系我们</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 佛山市贝拉利音响设备科技有限公司</span>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-weixin"></i></a>
+        <a href="#"><i class="fab fa-weibo"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="common.js"></script>
+</body>
+</html>
