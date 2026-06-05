@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q7 有源线阵 — 贝拉利音响</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+.detail-hero {
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  min-height: 80vh; padding-top: 80px;
+}
+.detail-hero-img {
+  position: relative; overflow: hidden;
+}
+.detail-hero-img img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.detail-hero-info {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 60px; background: var(--dark);
+}
+.detail-series {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 16px;
+}
+.detail-name {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 900; line-height: 1.2; margin-bottom: 20px;
+}
+.detail-desc {
+  font-size: 1rem; color: var(--grey); line-height: 1.8;
+  margin-bottom: 30px;
+}
+.spec-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  margin-bottom: 36px;
+}
+.spec-item {
+  padding: 16px; background: var(--dark2);
+  border-left: 2px solid var(--gold);
+}
+.spec-label {
+  font-size: 0.7rem; color: var(--grey);
+  letter-spacing: 1px; text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.spec-value {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem; font-weight: 700;
+}
+.detail-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.detail-section { padding: 80px 0; }
+.detail-section .container { max-width: 960px; }
+.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+.feature-item { text-align: center; padding: 30px 20px; }
+.feature-item i { font-size: 2rem; color: var(--gold); margin-bottom: 16px; display: block; }
+.feature-item h4 { font-size: 0.95rem; margin-bottom: 8px; }
+.feature-item p { font-size: 0.82rem; color: var(--grey); line-height: 1.6; }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+.gallery-grid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform 0.5s ease; cursor: pointer; }
+.gallery-grid img:hover { transform: scale(1.03); }
+.related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+@media (max-width: 1024px) {
+  .detail-hero { grid-template-columns: 1fr; }
+  .detail-hero-img { height: 50vh; }
+  .feature-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .detail-hero-info { padding: 40px 20px; }
+  .spec-grid { grid-template-columns: 1fr; }
+  .feature-grid, .gallery-grid, .related-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://beilarly.com/views/beilarly/im/logo2.png" alt="贝拉利"> BEILARLY
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="products.html" class="active">产品</a></li>
+      <li><a href="cases.html">工程案例</a></li>
+      <li><a href="solutions.html">解决方案</a></li>
+      <li><a href="about.html">关于我们</a></li>
+      <li><a href="contact.html">联系</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">获取方案</a>
+    <div class="nav-mobile" id="navMobile"><i class="fas fa-bars"></i></div>
+  </div>
+</nav>
+
+<section class="detail-hero">
+  <div class="detail-hero-img">
+    <img src="https://beilarly.com/uploadfiles/image/201908/113.jpg" alt="Q7有源线阵">
+  </div>
+  <div class="detail-hero-info">
+    <div class="detail-series">LINE ARRAY · Q SERIES</div>
+    <h1 class="detail-name">Q7 单12寸<br>二分频有源线阵</h1>
+    <p class="detail-desc">专为舞台演出和大型扩声场所设计，Q7有源线阵采用先进的DSP处理技术和高效功放模块，提供卓越的声音覆盖和高声压级输出。</p>
+    <div class="spec-grid">
+      <div class="spec-item">
+        <div class="spec-label">单元配置</div>
+        <div class="spec-value">1×12" + 1×1.4"</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">频率响应</div>
+        <div class="spec-value">55Hz-20kHz</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">最大声压级</div>
+        <div class="spec-value">135dB</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">额定功率</div>
+        <div class="spec-value">800W</div>
+      </div>
+    </div>
+    <div class="detail-actions">
+      <a href="contact.html" class="btn-primary">获取报价</a>
+      <a href="contact.html" class="btn-outline">下载资料</a>
+    </div>
+  </div>
+</section>
+
+<section class="detail-section">
+  <div class="container">
+    <div class="section-label">FEATURES</div>
+    <h2 class="section-title">产品特点</h2>
+    <div class="feature-grid">
+      <div class="feature-item reveal">
+        <i class="fas fa-bolt"></i>
+        <h4>有源内置功放</h4>
+        <p>内置高效D类功放模块，DSP数字处理，即插即用</p>
+      </div>
+      <div class="feature-item reveal reveal-delay-1">
+        <i class="fas fa-volume-up"></i>
+        <h4>高声压级输出</h4>
+        <p>最大声压级135dB，满足大型演出扩声需求</p>
+      </div>
+      <div class="feature-item reveal reveal-delay-2">
+        <i class="fas fa-wave-square"></i>
+        <h4>精准覆盖控制</h4>
+        <p>线阵吊挂设计，实现远距离均匀覆盖</p>
+      </div>
+      <div class="feature-item reveal">
+        <i class="fas fa-feather-alt"></i>
+        <h4>轻量化设计</h4>
+        <p>采用高强度铝合金箱体，单箱仅28kg</p>
+      </div>
+      <div class="feature-item reveal reveal-delay-1">
+        <i class="fas fa-puzzle-piece"></i>
+        <h4>模块化组合</h4>
+        <p>支持多只组合吊挂，灵活适应不同场地</p>
+      </div>
+      <div class="feature-item reveal reveal-delay-2">
+        <i class="fas fa-shield-alt"></i>
+        <h4>多重保护</h4>
+        <p>过热、过载、短路多重保护，稳定可靠</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="detail-section" style="background:var(--dark);padding:80px 0;">
+  <div class="container">
+    <div class="section-label">GALLERY</div>
+    <h2 class="section-title">产品图库</h2>
+    <div class="gallery-grid">
+      <img src="https://beilarly.com/uploadfiles/image/201908/113.jpg" alt="Q7正面">
+      <img src="https://beilarly.com/uploadfiles/image/201904/564.png" alt="Q7侧面">
+      <img src="https://beilarly.com/uploadfiles/image/201905/82.jpg" alt="Q7现场">
+    </div>
+  </div>
+</section>
+
+<section class="detail-section">
+  <div class="container">
+    <div class="section-label">RELATED</div>
+    <h2 class="section-title">相关产品</h2>
+    <div class="related-grid">
+      <a href="product-detail.html" class="card reveal">
+        <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/201905/82.jpg" alt="Q4"></div>
+        <div class="card-body">
+          <div class="card-series">Q SERIES</div>
+          <h3 class="card-title">Q4 有源线阵</h3>
+          <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+      <a href="product-detail.html" class="card reveal reveal-delay-1">
+        <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/201905/194.jpg" alt="KARA"></div>
+        <div class="card-body">
+          <div class="card-series">K SERIES</div>
+          <h3 class="card-title">KARA 线阵</h3>
+          <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+      <a href="product-detail.html" class="card reveal reveal-delay-2">
+        <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/201904/551.jpg" alt="V8"></div>
+        <div class="card-body">
+          <div class="card-series">V SERIES</div>
+          <h3 class="card-title">V8 线阵</h3>
+          <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="font-size:1.2rem;">
+          <img src="https://beilarly.com/views/beilarly/im/logo2.png" alt="贝拉利" style="height:28px;"> BEILARLY
+        </a>
+        <p>佛山市贝拉利音响设备科技有限公司，集生产与工程服务为一体的专业音响品牌厂家。</p>
+      </div>
+      <div><h4>产品系列</h4><ul>
+        <li><a href="products.html">线阵系统音响</a></li>
+        <li><a href="products.html">全频系统音响</a></li>
+        <li><a href="products.html">超低音响系列</a></li>
+      </ul></div>
+      <div><h4>工程案例</h4><ul>
+        <li><a href="cases.html">酒吧娱乐工程</a></li>
+        <li><a href="cases.html">KTV 娱乐工程</a></li>
+        <li><a href="cases.html">酒店宴会厅工程</a></li>
+      </ul></div>
+      <div><h4>关于贝拉利</h4><ul>
+        <li><a href="about.html">公司介绍</a></li>
+        <li><a href="contact.html">联系我们</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 佛山市贝拉利音响设备科技有限公司</span>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-weixin"></i></a>
+        <a href="#"><i class="fab fa-weibo"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="common.js"></script>
+</body>
+</html>
