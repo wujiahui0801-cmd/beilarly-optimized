@@ -599,21 +599,23 @@
     picker.innerHTML = html;
     document.body.appendChild(picker);
 
-    // Stop ALL clicks inside picker from reaching main handler (which uses capture)
+    // Stop clicks inside picker from reaching main handler, but allow item clicks to work
     picker.addEventListener('click', (ev) => {
-      ev.stopPropagation();
-      ev.stopImmediatePropagation();
-    }, true); // capture phase
-
-    // Bind item clicks
-    picker.querySelectorAll('.bly-layer-item').forEach(item => {
-      item.addEventListener('click', (ev) => {
+      const item = ev.target.closest('.bly-layer-item');
+      if (item) {
+        // This is an item click - handle it here, stop propagation to main handler
+        ev.stopPropagation();
+        ev.stopImmediatePropagation();
         const idx = parseInt(item.dataset.idx);
         const target = els[idx];
         picker.remove();
         selectElement(target);
-      });
-    });
+      } else {
+        // Click on picker background - just stop propagation
+        ev.stopPropagation();
+        ev.stopImmediatePropagation();
+      }
+    }, true); // capture phase - runs before main handler
 
     // Close on outside click
     setTimeout(() => {
