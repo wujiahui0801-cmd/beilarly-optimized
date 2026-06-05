@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>解决方案 — 贝拉利音响</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+.sol-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+.sol-hero-card {
+  position: relative; overflow: hidden; height: 350px; cursor: pointer;
+}
+.sol-hero-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+.sol-hero-card:hover img { transform: scale(1.05); }
+.sol-hero-card .overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(0deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 50%, transparent 100%);
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 36px;
+}
+.sol-hero-card .overlay i { font-size: 2rem; color: var(--gold); margin-bottom: 16px; }
+.sol-hero-card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; }
+.sol-hero-card p { font-size: 0.85rem; color: var(--grey); }
+.sol-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; padding: 80px 0; }
+.sol-detail.reverse { direction: rtl; }
+.sol-detail.reverse > * { direction: ltr; }
+.sol-detail img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.sol-detail .features { list-style: none; }
+.sol-detail .features li {
+  padding: 12px 0; border-bottom: 1px solid rgba(200,169,110,0.1);
+  display: flex; align-items: center; gap: 12px;
+  font-size: 0.9rem; color: rgba(245,240,235,0.8);
+}
+.sol-detail .features li i { color: var(--gold); font-size: 0.8rem; }
+@media (max-width: 768px) {
+  .sol-hero-grid { grid-template-columns: 1fr; }
+  .sol-hero-card { height: 250px; }
+  .sol-detail { grid-template-columns: 1fr; gap: 30px; }
+  .sol-detail.reverse { direction: ltr; }
+}
+</style>
+</head>
+<body>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://beilarly.com/views/beilarly/im/logo2.png" alt="贝拉利"> BEILARLY
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="products.html">产品</a></li>
+      <li><a href="cases.html">工程案例</a></li>
+      <li><a href="solutions.html" class="active">解决方案</a></li>
+      <li><a href="about.html">关于我们</a></li>
+      <li><a href="contact.html">联系</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">获取方案</a>
+    <div class="nav-mobile" id="navMobile"><i class="fas fa-bars"></i></div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="hero-bg" style="background-image:url('https://beilarly.com/uploadfiles/image/201905/194.jpg')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="page-label">SOLUTIONS</div>
+    <h1 class="page-title">音响系统解决方案</h1>
+    <p class="page-sub">根据不同场景需求，提供专业的定制化音响系统方案</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sol-hero-grid">
+      <div class="sol-hero-card reveal">
+        <img src="https://beilarly.com/uploadfiles/image/202403/35.jpg" alt="酒吧方案">
+        <div class="overlay">
+          <i class="fas fa-cocktail"></i>
+          <h3>酒吧音响系统方案</h3>
+          <p>高声压级、高保真的专业扩声方案，打造震撼派对体验</p>
+        </div>
+      </div>
+      <div class="sol-hero-card reveal reveal-delay-1">
+        <img src="https://beilarly.com/uploadfiles/image/201908/113.jpg" alt="KTV方案">
+        <div class="overlay">
+          <i class="fas fa-microphone-alt"></i>
+          <h3>KTV 音响系统方案</h3>
+          <p>沉浸式KTV体验，专业级话筒与效果器的完美配合</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-grid cols-4">
+      <div class="card reveal" style="text-align:center;padding:40px 24px;">
+        <i class="fas fa-music" style="font-size:2rem;color:var(--gold);margin-bottom:16px;display:block;"></i>
+        <h3 class="card-title">演出音响系统</h3>
+        <p class="card-text">大型流动演出与固定安装，线阵系统全覆盖</p>
+      </div>
+      <div class="card reveal reveal-delay-1" style="text-align:center;padding:40px 24px;">
+        <i class="fas fa-building" style="font-size:2rem;color:var(--gold);margin-bottom:16px;display:block;"></i>
+        <h3 class="card-title">宴会厅音响系统</h3>
+        <p class="card-text">多功能扩声，兼顾语言清晰度与音乐表现力</p>
+      </div>
+      <div class="card reveal reveal-delay-2" style="text-align:center;padding:40px 24px;">
+        <i class="fas fa-users" style="font-size:2rem;color:var(--gold);margin-bottom:16px;display:block;"></i>
+        <h3 class="card-title">会议厅音响系统</h3>
+        <p class="card-text">专业会议扩声与同声传译系统</p>
+      </div>
+      <div class="card reveal reveal-delay-3" style="text-align:center;padding:40px 24px;">
+        <i class="fas fa-film" style="font-size:2rem;color:var(--gold);margin-bottom:16px;display:block;"></i>
+        <h3 class="card-title">高端影院系统</h3>
+        <p class="card-text">全景声高清影院方案，沉浸式观影体验</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--dark);">
+  <div class="container">
+    <div class="sol-detail reveal">
+      <img src="https://beilarly.com/uploadfiles/image/202403/32.jpg" alt="酒吧方案详情">
+      <div>
+        <div class="section-label">BAR SOUND SYSTEM</div>
+        <h2 class="section-title">酒吧音响系统方案</h3>
+        <p class="section-desc" style="margin-bottom:24px;">针对不同酒吧风格，从清吧到夜店，贝拉利提供从声学设计到设备选型、安装调试的一站式解决方案。</p>
+        <ul class="features">
+          <li><i class="fas fa-check"></i> 线阵系统 + 超低音组合，声压级覆盖全场</li>
+          <li><i class="fas fa-check"></i> 数字处理器精调，分区独立控制</li>
+          <li><i class="fas fa-check"></i> 专业声学顾问免费上门勘测</li>
+          <li><i class="fas fa-check"></i> 两年保修 + 终身维护</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-cta" id="contact">
+  <div class="cta-bg" style="position:absolute;inset:0;background:url('https://beilarly.com/views/beilarly/im/s.jpg') center/cover;filter:brightness(0.3);"></div>
+  <div class="cta-overlay" style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,10,0.9),rgba(26,26,46,0.8));"></div>
+  <div class="container">
+    <div style="position:relative;z-index:2;text-align:center;padding:80px 0;">
+      <div class="section-label" style="text-align:center;">CONSULT</div>
+      <h2 class="section-title" style="text-align:center;font-size:clamp(1.8rem,3.5vw,2.5rem);">免费获取专属方案</h2>
+      <p class="section-desc" style="margin:0 auto 40px;text-align:center;">工程师免费上门勘测 · 1对1全程跟踪 · 免费设计系统方案</p>
+      <a href="contact.html" class="btn-primary">立即咨询</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="font-size:1.2rem;">
+          <img src="https://beilarly.com/views/beilarly/im/logo2.png" alt="贝拉利" style="height:28px;"> BEILARLY
+        </a>
+        <p>佛山市贝拉利音响设备科技有限公司，集生产与工程服务为一体的专业音响品牌厂家。</p>
+      </div>
+      <div><h4>产品系列</h4><ul>
+        <li><a href="products.html">线阵系统音响</a></li>
+        <li><a href="products.html">全频系统音响</a></li>
+        <li><a href="products.html">超低音响系列</a></li>
+      </ul></div>
+      <div><h4>工程案例</h4><ul>
+        <li><a href="cases.html">酒吧娱乐工程</a></li>
+        <li><a href="cases.html">KTV 娱乐工程</a></li>
+        <li><a href="cases.html">酒店宴会厅工程</a></li>
+      </ul></div>
+      <div><h4>关于贝拉利</h4><ul>
+        <li><a href="about.html">公司介绍</a></li>
+        <li><a href="contact.html">联系我们</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 佛山市贝拉利音响设备科技有限公司</span>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-weixin"></i></a>
+        <a href="#"><i class="fab fa-weibo"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="common.js"></script>
+</body>
+</html>
