@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>产品中心 — 贝拉利音响</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://beilarly.com/views/beilarly/im/logo2.png" alt="贝拉利"> BEILARLY
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="products.html" class="active">产品</a></li>
+      <li><a href="cases.html">工程案例</a></li>
+      <li><a href="solutions.html">解决方案</a></li>
+      <li><a href="about.html">关于我们</a></li>
+      <li><a href="contact.html">联系</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">获取方案</a>
+    <div class="nav-mobile" id="navMobile"><i class="fas fa-bars"></i></div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="hero-bg" style="background-image:url('https://beilarly.com/uploadfiles/image/201908/113.jpg')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="page-label">PRODUCTS</div>
+    <h1 class="page-title">产品中心</h1>
+    <p class="page-sub">全系列专业音响设备，满足各类场景需求</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="tabs" id="productTabs">
+      <div class="tab active" data-target="tab-all">全部产品</div>
+      <div class="tab" data-target="tab-line">线阵系统</div>
+      <div class="tab" data-target="tab-full">全频音箱</div>
+      <div class="tab" data-target="tab-sub">超低音</div>
+      <div class="tab" data-target="tab-amp">功放系列</div>
+      <div class="tab" data-target="tab-cinema">影院系统</div>
+    </div>
+
+    <!-- 全部产品 -->
+    <div class="tab-content" id="tab-all">
+      <div class="card-grid cols-3">
+        <a href="product-detail.html" class="card reveal">
+          <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/201908/113.jpg" alt="KARA线阵"></div>
+          <div class="card-body">
+            <div class="card-series">LINE ARRAY · Q SERIES</div>
+            <h3 class="card-title">Q7 单12寸二分频有源线阵</h3>
+            <p class="card-text">适合舞台演出、大型扩声场所，高声压级输出</p>
+            <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a href="product-detail.html" class="card reveal reveal-delay-1">
+          <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/201905/82.jpg" alt="Q4线阵"></div>
+          <div class="card-body">
+            <div class="card-series">LINE ARRAY · Q SERIES</div>
+            <h3 class="card-title">Q4 单12寸二分频有源线阵</h3>
+            <p class="card-text">适合流动演出，便携式设计，快速部署</p>
+            <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a href="product-detail.html" class="card reveal reveal-delay-2">
+          <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/201905/194.jpg" alt="KARA线阵"></div>
+          <div class="card-body">
+            <div class="card-series">LINE ARRAY · K SERIES</div>
+            <h3 class="card-title">KARA 双8寸全频线阵</h3>
+            <p class="card-text">适合酒吧、体育馆等中大型扩声场所</p>
+            <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a href="product-detail.html" class="card reveal">
+          <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/201905/521.jpg" alt="K2线阵"></div>
+          <div class="card-body">
+            <div class="card-series">LINE ARRAY · K SERIES</div>
+            <h3 class="card-title">K2 双12寸线阵音响</h3>
+            <p class="card-text">适合体育馆、歌剧院等大型固定安装场所</p>
+            <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a href="product-detail.html" class="card reveal reveal-delay-1">
+          <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/201904/551.jpg" alt="V8线阵"></div>
+          <div class="card-body">
+            <div class="card-series">LINE ARRAY · V SERIES</div>
+            <h3 class="card-title">V8 双10寸全频线阵</h3>
+            <p class="card-text">适合酒吧、宴会厅等娱乐扩声场所</p>
+            <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a href="product-detail.html" class="card reveal reveal-delay-2">
+          <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/202305/3.jpg" alt="KK1012"></div>
+          <div class="card-body">
+            <div class="card-series">FULL RANGE · KK SERIES</div>
+            <h3 class="card-title">KK1012 单12寸全频音箱</h3>
+            <p class="card-text">多功能全频音箱，适用于各类中小型场所</p>
+            <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a href="product-detail.html" class="card reveal">
+          <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/201904/349.jpg" alt="功放"></div>
+          <div class="card-body">
+            <div class="card-series">AMPLIFIER · LA SERIES</div>
+            <h3 class="card-title">LA系列功率放大器</h3>
+            <p class="card-text">高效稳定，为专业音响系统提供强劲动力</p>
+            <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a href="product-detail.html" class="card reveal reveal-delay-1">
+          <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/201905/82.jpg" alt="影院系统"></div>
+          <div class="card-body">
+            <div class="card-series">CINEMA · Y SERIES</div>
+            <h3 class="card-title">Y系列影院音响系统</h3>
+            <p class="card-text">全景声高清影院方案，沉浸式观影体验</p>
+            <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a href="product-detail.html" class="card reveal reveal-delay-2">
+          <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/201904/564.png" alt="超低音"></div>
+          <div class="card-body">
+            <div class="card-series">SUBWOOFER · EV SERIES</div>
+            <h3 class="card-title">EV系列超低音箱</h3>
+            <p class="card-text">深沉有力的低频表现，增强系统冲击力</p>
+            <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 线阵系统 -->
+    <div class="tab-content" id="tab-line" style="display:none">
+      <div class="card-grid cols-3">
+        <a href="product-detail.html" class="card reveal">
+          <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/201908/113.jpg" alt="Q7"></div>
+          <div class="card-body">
+            <div class="card-series">Q SERIES</div>
+            <h3 class="card-title">Q7 单12寸二分频有源线阵</h3>
+            <p class="card-text">适合舞台演出、大型扩声场所</p>
+            <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a href="product-detail.html" class="card reveal reveal-delay-1">
+          <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/201905/82.jpg" alt="Q4"></div>
+          <div class="card-body">
+            <div class="card-series">Q SERIES</div>
+            <h3 class="card-title">Q4 单12寸二分频有源线阵</h3>
+            <p class="card-text">适合流动演出，便携式设计</p>
+            <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a href="product-detail.html" class="card reveal reveal-delay-2">
+          <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/201905/194.jpg" alt="KARA"></div>
+          <div class="card-body">
+            <div class="card-series">K SERIES</div>
+            <h3 class="card-title">KARA 双8寸全频线阵</h3>
+            <p class="card-text">适合酒吧、体育馆等中大型扩声场所</p>
+            <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a href="product-detail.html" class="card reveal">
+          <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/201905/521.jpg" alt="K2"></div>
+          <div class="card-body">
+            <div class="card-series">K SERIES</div>
+            <h3 class="card-title">K2 双12寸线阵音响</h3>
+            <p class="card-text">适合体育馆、歌剧院等大型固定安装</p>
+            <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a href="product-detail.html" class="card reveal reveal-delay-1">
+          <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/201904/551.jpg" alt="V8"></div>
+          <div class="card-body">
+            <div class="card-series">V SERIES</div>
+            <h3 class="card-title">V8 双10寸全频线阵</h3>
+            <p class="card-text">适合酒吧、宴会厅等娱乐扩声场所</p>
+            <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 全频音箱 -->
+    <div class="tab-content" id="tab-full" style="display:none">
+      <div class="card-grid cols-3">
+        <a href="product-detail.html" class="card reveal">
+          <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/202305/3.jpg" alt="KK1012"></div>
+          <div class="card-body">
+            <div class="card-series">KK SERIES</div>
+            <h3 class="card-title">KK1012 单12寸全频音箱</h3>
+            <p class="card-text">多功能全频音箱，适用于各类中小型场所</p>
+            <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 超低音 -->
+    <div class="tab-content" id="tab-sub" style="display:none">
+      <div class="card-grid cols-3">
+        <a href="product-detail.html" class="card reveal">
+          <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/201904/564.png" alt="EV系列"></div>
+          <div class="card-body">
+            <div class="card-series">EV SERIES</div>
+            <h3 class="card-title">EV系列超低音箱</h3>
+            <p class="card-text">深沉有力的低频表现</p>
+            <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 功放系列 -->
+    <div class="tab-content" id="tab-amp" style="display:none">
+      <div class="card-grid cols-3">
+        <a href="product-detail.html" class="card reveal">
+          <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/201904/349.jpg" alt="LA系列"></div>
+          <div class="card-body">
+            <div class="card-series">LA SERIES</div>
+            <h3 class="card-title">LA系列功率放大器</h3>
+            <p class="card-text">高效稳定，专业级功率输出</p>
+            <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 影院系统 -->
+    <div class="tab-content" id="tab-cinema" style="display:none">
+      <div class="card-grid cols-3">
+        <a href="product-detail.html" class="card reveal">
+          <div style="overflow:hidden"><img class="card-img" src="https://beilarly.com/uploadfiles/image/201905/82.jpg" alt="Y系列"></div>
+          <div class="card-body">
+            <div class="card-series">Y SERIES</div>
+            <h3 class="card-title">Y系列影院音响系统</h3>
+            <p class="card-text">全景声高清影院方案</p>
+            <span class="card-link">查看详情 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="font-size:1.2rem;">
+          <img src="https://beilarly.com/views/beilarly/im/logo2.png" alt="贝拉利" style="height:28px;"> BEILARLY
+        </a>
+        <p>佛山市贝拉利音响设备科技有限公司，集生产与工程服务为一体的专业音响品牌厂家。</p>
+      </div>
+      <div>
+        <h4>产品系列</h4>
+        <ul>
+          <li><a href="products.html">线阵系统音响</a></li>
+          <li><a href="products.html">全频系统音响</a></li>
+          <li><a href="products.html">超低音响系列</a></li>
+          <li><a href="products.html">功放系列</a></li>
+          <li><a href="products.html">影院系统</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>工程案例</h4>
+        <ul>
+          <li><a href="cases.html">酒吧娱乐工程</a></li>
+          <li><a href="cases.html">KTV 娱乐工程</a></li>
+          <li><a href="cases.html">酒店宴会厅工程</a></li>
+          <li><a href="cases.html">剧院体育馆工程</a></li>
+          <li><a href="cases.html">高端影院工程</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于贝拉利</h4>
+        <ul>
+          <li><a href="about.html">公司介绍</a></li>
+          <li><a href="about.html">发展历程</a></li>
+          <li><a href="about.html">荣誉资质</a></li>
+          <li><a href="about.html">工厂一览</a></li>
+          <li><a href="contact.html">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 佛山市贝拉利音响设备科技有限公司</span>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-weixin"></i></a>
+        <a href="#"><i class="fab fa-weibo"></i></a>
+        <a href="#"><i class="fas fa-video"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="common.js"></script>
+</body>
+</html>
