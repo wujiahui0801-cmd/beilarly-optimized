@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>联系我们 — 贝拉利音响</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.contact-info-card {
+  background: var(--dark2); padding: 36px; margin-bottom: 20px;
+  border-left: 3px solid var(--gold);
+}
+.contact-info-card h4 { font-size: 0.8rem; letter-spacing: 2px; color: var(--gold); margin-bottom: 12px; text-transform: uppercase; }
+.contact-info-card p { font-size: 1rem; line-height: 1.8; }
+.contact-info-card .big { font-size: 1.6rem; font-weight: 700; font-family: 'Montserrat', sans-serif; }
+.contact-form { display: flex; flex-direction: column; gap: 20px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.form-group label { display: block; font-size: 0.8rem; color: var(--grey); margin-bottom: 8px; letter-spacing: 1px; }
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%; padding: 14px 16px;
+  background: var(--dark2); border: 1px solid rgba(200,169,110,0.1);
+  color: var(--white); font-size: 0.9rem;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+  outline: none; border-color: var(--gold);
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-group select option { background: var(--dark2); }
+.form-submit {
+  padding: 16px 44px; background: var(--gold); color: var(--black);
+  font-weight: 700; font-size: 0.85rem; letter-spacing: 2px;
+  text-transform: uppercase; border: none; cursor: pointer;
+  transition: all 0.3s ease; align-self: flex-start;
+}
+.form-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 40px var(--gold-glow); }
+.adv-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
+.adv-item { text-align: center; padding: 30px; }
+.adv-item i { font-size: 1.8rem; color: var(--gold); margin-bottom: 16px; display: block; }
+.adv-item h4 { font-size: 0.95rem; margin-bottom: 8px; }
+.adv-item p { font-size: 0.8rem; color: var(--grey); }
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .adv-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://beilarly.com/views/beilarly/im/logo2.png" alt="贝拉利"> BEILARLY
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="products.html">产品</a></li>
+      <li><a href="cases.html">工程案例</a></li>
+      <li><a href="solutions.html">解决方案</a></li>
+      <li><a href="about.html">关于我们</a></li>
+      <li><a href="contact.html" class="active">联系</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">获取方案</a>
+    <div class="nav-mobile" id="navMobile"><i class="fas fa-bars"></i></div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="hero-bg" style="background-image:url('https://beilarly.com/views/beilarly/im/zb3.jpg')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="page-label">CONTACT</div>
+    <h1 class="page-title">联系我们</h1>
+    <p class="page-sub">免费上门勘测 · 免费设计方案 · 全程技术支持</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="section-label">GET IN TOUCH</div>
+        <h2 class="section-title">期待与您合作</h2>
+        <p class="section-desc" style="margin-bottom:40px;">无论您是工程商、娱乐场所老板还是外贸采购商，贝拉利都能为您提供专业的音响解决方案。</p>
+
+        <div class="contact-info-card reveal">
+          <h4><i class="fas fa-phone-alt"></i> 电话咨询</h4>
+          <p class="big">400-XXX-XXXX</p>
+          <p>工作时间：周一至周六 8:30-18:00</p>
+        </div>
+        <div class="contact-info-card reveal">
+          <h4><i class="fas fa-envelope"></i> 邮箱</h4>
+          <p>info@beilarly.com</p>
+        </div>
+        <div class="contact-info-card reveal">
+          <h4><i class="fas fa-map-marker-alt"></i> 工厂地址</h4>
+          <p>广东省佛山市南海区<br>贝拉利音响工业园</p>
+        </div>
+        <div class="contact-info-card reveal">
+          <h4><i class="fas fa-clock"></i> 工厂参观</h4>
+          <p>集团工厂参观免费接送<br>提前预约即可安排工程师接待</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-label">SEND MESSAGE</div>
+        <h2 class="section-title" style="margin-bottom:30px;">获取免费方案</h2>
+        <form class="contact-form reveal" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label>您的姓名 *</label>
+              <input type="text" placeholder="请输入姓名">
+            </div>
+            <div class="form-group">
+              <label>联系电话 *</label>
+              <input type="tel" placeholder="请输入手机号">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>项目类型</label>
+            <select>
+              <option value="">请选择项目类型</option>
+              <option>酒吧/夜店</option>
+              <option>KTV/量贩式KTV</option>
+              <option>酒店宴会厅</option>
+              <option>剧院/礼堂</option>
+              <option>会议厅/报告厅</option>
+              <option>影院</option>
+              <option>演出活动</option>
+              <option>其他</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>项目面积</label>
+            <input type="text" placeholder="例如：500㎡">
+          </div>
+          <div class="form-group">
+            <label>需求描述</label>
+            <textarea placeholder="请简述您的需求，我们会尽快安排专业顾问与您联系"></textarea>
+          </div>
+          <button type="submit" class="form-submit">提交咨询</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="adv-row">
+      <div class="adv-item reveal">
+        <i class="fas fa-user-cog"></i>
+        <h4>1对1全程跟踪</h4>
+        <p>专业顾问从方案设计到项目验收全程服务</p>
+      </div>
+      <div class="adv-item reveal reveal-delay-1">
+        <i class="fas fa-drafting-compass"></i>
+        <h4>免费设计方案</h4>
+        <p>专业团队根据场地和定位免费设计音响系统方案</p>
+      </div>
+      <div class="adv-item reveal reveal-delay-2">
+        <i class="fas fa-truck"></i>
+        <h4>快速供货</h4>
+        <p>自有工厂，产能充足，常规产品7天内发货</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="font-size:1.2rem;">
+          <img src="https://beilarly.com/views/beilarly/im/logo2.png" alt="贝拉利" style="height:28px;"> BEILARLY
+        </a>
+        <p>佛山市贝拉利音响设备科技有限公司，集生产与工程服务为一体的专业音响品牌厂家。</p>
+      </div>
+      <div><h4>产品系列</h4><ul>
+        <li><a href="products.html">线阵系统音响</a></li>
+        <li><a href="products.html">全频系统音响</a></li>
+        <li><a href="products.html">超低音响系列</a></li>
+      </ul></div>
+      <div><h4>工程案例</h4><ul>
+        <li><a href="cases.html">酒吧娱乐工程</a></li>
+        <li><a href="cases.html">KTV 娱乐工程</a></li>
+        <li><a href="cases.html">酒店宴会厅工程</a></li>
+      </ul></div>
+      <div><h4>关于贝拉利</h4><ul>
+        <li><a href="about.html">公司介绍</a></li>
+        <li><a href="contact.html">联系我们</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 佛山市贝拉利音响设备科技有限公司</span>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-weixin"></i></a>
+        <a href="#"><i class="fab fa-weibo"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="common.js"></script>
+</body>
+</html>
