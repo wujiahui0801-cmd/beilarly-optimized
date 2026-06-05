@@ -302,6 +302,54 @@
     .bly-guide-box .bly-guide-steps p {
       font-size: 0.82rem; margin: 0; color: #ccc;
     }
+
+    /* Layer picker */
+    .bly-layer-picker {
+      position: fixed;
+      background: #111;
+      border: 1px solid rgba(200,169,110,0.3);
+      padding: 8px;
+      z-index: 100000;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+      border-radius: 6px;
+      min-width: 260px; max-width: 380px;
+      max-height: 360px; overflow-y: auto;
+    }
+    .bly-layer-picker-title {
+      font-size: 0.7rem; color: #888;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 6px 10px; margin-bottom: 4px;
+    }
+    .bly-layer-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 10px; cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.15s;
+      border: 1px solid transparent;
+    }
+    .bly-layer-item:hover {
+      background: rgba(200,169,110,0.1);
+      border-color: rgba(200,169,110,0.2);
+    }
+    .bly-layer-item .tag {
+      font-family: 'Montserrat', monospace;
+      font-size: 0.72rem; color: #C8A96E;
+      background: rgba(200,169,110,0.1);
+      padding: 2px 8px; border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .bly-layer-item .info {
+      font-size: 0.75rem; color: #aaa;
+      overflow: hidden; text-overflow: ellipsis;
+      white-space: nowrap; flex: 1;
+    }
+    .bly-layer-item .preview {
+      width: 32px; height: 32px; flex-shrink: 0;
+      object-fit: cover; border-radius: 3px;
+      border: 1px solid rgba(200,169,110,0.1);
+    }
+    .bly-layer-item.is-img { background: rgba(200,169,110,0.03); }
+    .bly-layer-item.is-img .tag { background: rgba(200,169,110,0.2); }
   `;
   document.head.appendChild(editorCSS);
 
@@ -491,26 +539,98 @@
     tip.style.display = 'none';
   }, true);
 
-  // Click to select
+  // Click to select - with layer picker for overlapping elements
   document.addEventListener('click', function(e) {
     if (!editMode || isEditorEl(e.target)) return;
+    e.preventDefault();
+    e.stopPropagation();
 
-    // If clicking on an image, prompt to replace
-    if (e.target.tagName === 'IMG') {
-      e.preventDefault();
-      e.stopPropagation();
-      deselectAll();
-      selectedEl = e.target;
-      selectedEl.classList.add('bly-selected');
-      promptImageReplace(e.target);
+    // Collect ALL elements at this point (from top to bottom of DOM)
+    const x = e.clientX, y = e.clientY;
+    const els = document.elementsFromPoint(x, y)
+      .filter(el => !isEditorEl(el) && el !== document.body && el !== document.documentElement);
+
+    if (els.length === 0) return;
+
+    // If multiple elements, show layer picker
+    if (els.length > 1) {
+      showLayerPicker(els, x, y);
       return;
     }
 
-    e.preventDefault();
-    e.stopPropagation();
+    // Single element - select directly
+    selectElement(els[0]);
+  }, true);
+
+  // Layer picker popup
+  function showLayerPicker(els, x, y) {
+    // Remove existing picker
+    const old = document.querySelector('.bly-layer-picker');
+    if (old) old.remove();
+
+    const picker = document.createElement('div');
+    picker.className = 'bly-layer-picker';
+
+    // Position near click but keep on screen
+    picker.style.left = Math.min(x + 10, window.innerWidth - 400) + 'px';
+    picker.style.top = Math.min(y + 10, window.innerHeight - 380) + 'px';
+
+    let html = '<div class="bly-layer-title">🔍 点击选择要编辑的元素</div>';
+
+    els.forEach((el, i) => {
+      const tag = el.tagName.toLowerCase();
+      const cls = el.className && typeof el.className === 'string'
+        ? '.' + el.className.split(' ').filter(c => !c.startsWith('bly-')).slice(0,2).join('.') : '';
+      const isImg = tag === 'img';
+      const text = el.textContent.trim().substring(0, 30);
+      const preview = isImg ? `<img class="preview" src="${el.src}">` : '';
+      const info = isImg ? '图片' : (text || tag + cls);
+
+      html += `
+        <div class="bly-layer-item ${isImg ? 'is-img' : ''}" data-idx="${i}">
+          <span class="tag">${tag}${cls}</span>
+          <span class="info">${info}</span>
+          ${preview}
+        </div>
+      `;
+    });
+
+    picker.innerHTML = html;
+    document.body.appendChild(picker);
+
+    // Bind clicks
+    picker.querySelectorAll('.bly-layer-item').forEach(item => {
+      item.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        const idx = parseInt(item.dataset.idx);
+        const target = els[idx];
+        picker.remove();
+        selectElement(target);
+      });
+    });
+
+    // Close on outside click
+    setTimeout(() => {
+      document.addEventListener('click', function closePicker(ev) {
+        if (!picker.contains(ev.target)) {
+          picker.remove();
+          document.removeEventListener('click', closePicker);
+        }
+      }, { once: true });
+    }, 100);
+  }
+
+  // Select an element
+  function selectElement(el) {
     deselectAll();
-    selectedEl = e.target;
+    selectedEl = el;
     selectedEl.classList.add('bly-selected');
+
+    // If it's an image, go straight to image replace
+    if (el.tagName === 'IMG') {
+      promptImageReplace(el);
+      return;
+    }
 
     // Position quick bar
     const rect = selectedEl.getBoundingClientRect();
@@ -520,7 +640,7 @@
 
     // Render editor panel
     renderElementEditor(selectedEl);
-  }, true);
+  }
 
   // Double click to edit text
   document.addEventListener('dblclick', function(e) {
